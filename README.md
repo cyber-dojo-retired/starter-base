@@ -5,7 +5,7 @@ The source for the [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/s
 
 ## The build script
 * Use the $[cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) ```start-point create ...``` command to create your own start-point images.
-* It will use [cyberdojo/start-points-base](https://hub.docker.com/r/cyberdojo/start-points-base) as its base (FROM) image to:
+* It will use [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/starter-base) as its base (FROM) image to:
   * Check the format of the start-points inside the git-repo url's
   * Serve the start-points from an HTTP web server.
 
