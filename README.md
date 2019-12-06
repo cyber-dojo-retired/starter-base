@@ -1,14 +1,13 @@
 
-<img src="https://raw.githubusercontent.com/cyber-dojo/nginx/master/images/home_page_logo.png" alt="cyber-dojo yin/yang logo" width="50px" height="50px"/>
-
 [![CircleCI](https://circleci.com/gh/cyber-dojo/starter-base.svg?style=svg)](https://circleci.com/gh/cyber-dojo/starter-base)
 
 The source for the [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/starter-base) docker image.
 
 ## The build script
-* Use the [cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo)
-script to create your own start-point images.
-* It will use [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/starter-base) as its base (FROM) image.
+* Use the $[cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) ```start-point create ...``` command to create your own start-point images.
+* It will use [cyberdojo/start-points-base](https://hub.docker.com/r/cyberdojo/start-points-base) as its base (FROM) image to:
+  * Check the format of the start-points inside the git-repo url's
+  * Serve the start-points from an HTTP web server.
 
 ```bash
 $ ./cyber-dojo start-point create --help
@@ -31,6 +30,15 @@ $ ./cyber-dojo start-point create \
 --languages      https://github.com/cyber-dojo-languages/gplusplus-googlemock.git
 --languages      https://github.com/cyber-dojo-languages/java-junit.git
 Successfully built acme/my-languages-start-points
+```
+For example:
+```bash
+$ ./cyber-dojo start-point create \
+      acme/my-custom-start-points \
+        --custom \
+          /users/fred/custom
+ERROR: no manifest.json files in
+--custom /users/fred/custom
 ```
 
 - - - -
