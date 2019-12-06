@@ -3,21 +3,17 @@
 
 The source for the [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/starter-base) docker image.
 
-## The build script
-* Use the $[cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) ```start-point create ...``` command to create your own start-point images.
-* It will use [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/starter-base) as its base (FROM) image to:
-  * Check the format of the start-points inside the git-repo url's
-  * Serve the start-points from an HTTP web server.
+* You use the $[cyber-dojo](https://github.com/cyber-dojo/commander/blob/master/cyber-dojo) ```start-point create ...``` command to create your own start-point images.
+  ```bash
+  $ ./cyber-dojo start-point create --help
+    Use:
+    cyber-dojo start-point create <name> --custom    <url> ...
+    cyber-dojo start-point create <name> --exercises <url> ...
+    cyber-dojo start-point create <name> --languages <url> ...
+    ...
+  ```
 
-```bash
-$ ./cyber-dojo start-point create --help
-  Use:
-  cyber-dojo start-point create <name> --custom    <url> ...
-  cyber-dojo start-point create <name> --exercises <url> ...
-  cyber-dojo start-point create <name> --languages <url> ...
-  ...
-```
-For example:
+* If successful, the created image <name> will use [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/starter-base) as its base (FROM) image and will http-serve copies of the start-points in the urls when named in a [cyber-dojo up] command. For example:
 ```bash
 $ ./cyber-dojo start-point create \
       acme/my-languages-start-points \
@@ -30,8 +26,12 @@ $ ./cyber-dojo start-point create \
 --languages      https://github.com/cyber-dojo-languages/gplusplus-googlemock.git
 --languages      https://github.com/cyber-dojo-languages/java-junit.git
 Successfully built acme/my-languages-start-points
+
+$ ./cyber-dojo up --languages=acme/my-languages-start-points
+...
 ```
-For example:
+
+* If unsuccessful, the command will print an error message. For example:
 ```bash
 $ ./cyber-dojo start-point create \
       acme/my-custom-start-points \
