@@ -14,32 +14,32 @@ The source for the [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/s
   ```
 
 * If successful, the created image <name> will use [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/starter-base) as its base (FROM) image and will http-serve copies of the start-points in the urls when named in a [cyber-dojo up] command. For example:
-```bash
-$ ./cyber-dojo start-point create \
-      acme/my-languages-start-points \
-        --languages \
-          https://github.com/cyber-dojo-languages/csharp-nunit             \
-          https://github.com/cyber-dojo-languages/gplusplus-googlemock.git \
-          https://github.com/cyber-dojo-languages/java-junit.git
+  ```bash
+  $ ./cyber-dojo start-point create \
+        acme/my-languages-start-points \
+          --languages \
+            https://github.com/cyber-dojo-languages/csharp-nunit             \
+            https://github.com/cyber-dojo-languages/gplusplus-googlemock.git \
+            https://github.com/cyber-dojo-languages/java-junit.git
 
---languages      https://github.com/cyber-dojo-languages/csharp-nunit
---languages      https://github.com/cyber-dojo-languages/gplusplus-googlemock.git
---languages      https://github.com/cyber-dojo-languages/java-junit.git
-Successfully built acme/my-languages-start-points
+  --languages      https://github.com/cyber-dojo-languages/csharp-nunit
+  --languages      https://github.com/cyber-dojo-languages/gplusplus-googlemock.git
+  --languages      https://github.com/cyber-dojo-languages/java-junit.git
+  Successfully built acme/my-languages-start-points
 
-$ ./cyber-dojo up --languages=acme/my-languages-start-points
-...
-```
+  $ ./cyber-dojo up --languages=acme/my-languages-start-points
+  ...
+  ```
 
 * If unsuccessful, the command will print an error message. For example:
-```bash
-$ ./cyber-dojo start-point create \
-      acme/my-custom-start-points \
-        --custom \
-          /users/fred/custom
-ERROR: no manifest.json files in
---custom /users/fred/custom
-```
+  ```bash
+  $ ./cyber-dojo start-point create \
+        acme/my-custom-start-points \
+          --custom \
+            /users/fred/custom
+  ERROR: no manifest.json files in
+  --custom /users/fred/custom
+  ```
 
 - - - -
 
