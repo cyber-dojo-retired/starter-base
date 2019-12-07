@@ -21,10 +21,7 @@ The source for the [cyberdojo/starter-base](https://hub.docker.com/r/cyberdojo/s
             https://github.com/cyber-dojo-languages/csharp-nunit             \
             https://github.com/cyber-dojo-languages/gplusplus-googlemock.git \
             https://github.com/cyber-dojo-languages/java-junit.git
-
-  --languages      https://github.com/cyber-dojo-languages/csharp-nunit
-  --languages      https://github.com/cyber-dojo-languages/gplusplus-googlemock.git
-  --languages      https://github.com/cyber-dojo-languages/java-junit.git
+  ...
   Successfully built acme/my-languages-start-points
 
   $ ./cyber-dojo up --languages=acme/my-languages-start-points
